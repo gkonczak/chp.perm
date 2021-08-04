@@ -74,7 +74,8 @@ chp.perm(x,y)
 
 
 ### Example 5
-xy=read.csv2('http://stat.ue.katowice.pl/xy.csv')
+xy=read.csv2('https://github.com/gkonczak/chp.perm/blob/main/xy.csv')
+
 x=xy$x
 y=xy$y
 chp.perm(x,y)
