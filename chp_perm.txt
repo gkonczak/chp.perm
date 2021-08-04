@@ -35,7 +35,7 @@ k_star=order(Cohen_d[first_k:last_k],decreasing = TRUE)[1]	+ first_k-1
 return(k_star)
 }
 
-### Example 1
+### Example 1 Minor normal noise
 n=100
 x=1:100
 chp=50
@@ -44,17 +44,28 @@ y<-2+0.05*pmax(x-chp,0)+rnorm(n)/3
 chp.perm(x,y)
 
 
+### Example 2 Najor normal noise
+
 n=100
 x=1:100
-chp=20
-y<-2+0.05*pmax(x-chp,0)+rnorm(n)/3	
+chp=50
+y<-2+0.05*pmax(x-chp,0)+rnorm(n)	
 
 chp.perm(x,y)
 
 
 
+### Example 3 Dominant normal noise
 
-### Example 2
+n=100
+x=1:100
+chp=50
+y<-2+0.05*pmax(x-chp,0)+5*rnorm(n)/3	
+
+chp.perm(x,y)
+
+
+### Example 4
 xy=read.csv2('e:/xy.csv')
 x=xy$x
 y=xy$y
@@ -62,7 +73,7 @@ y=xy$y
 chp.perm(x,y)
 
 
-### Example 3
+### Example 5
 xy=read.csv2('http://stat.ue.katowice.pl/xy.csv')
 x=xy$x
 y=xy$y
@@ -70,7 +81,7 @@ chp.perm(x,y)
 
 
 
-### Example 4
+### Example 6
 
 
 
