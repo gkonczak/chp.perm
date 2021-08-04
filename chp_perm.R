@@ -43,7 +43,6 @@ y<-2+0.05*pmax(x-chp,0)+rnorm(n)/3
 
 chp.perm(x,y)
 
-
 ### Example 2 Najor normal noise
 
 n=100
@@ -52,8 +51,6 @@ chp=50
 y<-2+0.05*pmax(x-chp,0)+rnorm(n)	
 
 chp.perm(x,y)
-
-
 
 ### Example 3 Dominant normal noise
 
@@ -64,7 +61,6 @@ y<-2+0.05*pmax(x-chp,0)+5*rnorm(n)/3
 
 chp.perm(x,y)
 
-
 ### Example 4
 xy=read.csv2('e:/xy.csv')
 x=xy$x
@@ -72,20 +68,10 @@ y=xy$y
 
 chp.perm(x,y)
 
-
 ### Example 5
-xy=read.csv2('https://github.com/gkonczak/chp.perm/blob/main/xy.csv')
-
+xy=read.csv2('http://stat.ue.katowice.pl/xy.csv')
 x=xy$x
 y=xy$y
 chp.perm(x,y)
-
-
-
-### Example 6
-
-
-
-### Example 5
 
 
