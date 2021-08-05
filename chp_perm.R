@@ -1,15 +1,13 @@
 
-
+### Function chp.perm
 
 chp.perm <-function(x,y,N_perm=100)
 {
 n=length(x)
 first_k=10					
 last_k=90					
-
 alpha=0.05
 Cohen_d=rep(NA,n)
-
 simple.fit = lm(y~x)			
 res=simple.fit$residuals		
 yf=simple.fit$fitted			
@@ -34,6 +32,9 @@ Cohen_d[k]=(b2-b1)/sqrt((n*var(b1s)+n*var(b2s))/(2*n-2))
 k_star=order(Cohen_d[first_k:last_k],decreasing = TRUE)[1]	+ first_k-1
 return(k_star)
 }
+### End ot the function
+
+
 
 ### Example 1 Minor normal noise
 n=100
@@ -44,7 +45,6 @@ y<-2+0.05*pmax(x-chp,0)+rnorm(n)/3
 chp.perm(x,y)
 
 ### Example 2 Najor normal noise
-
 n=100
 x=1:100
 chp=50
@@ -53,7 +53,6 @@ y<-2+0.05*pmax(x-chp,0)+rnorm(n)
 chp.perm(x,y)
 
 ### Example 3 Dominant normal noise
-
 n=100
 x=1:100
 chp=50
@@ -69,9 +68,18 @@ y=xy$y
 chp.perm(x,y)
 
 ### Example 5
-xy=read.csv2('http://stat.ue.katowice.pl/xy.csv')
+xy=read.csv2('https://github.com/gkonczak/chp.perm/blob/main/xy.csv')
 x=xy$x
 y=xy$y
+
 chp.perm(x,y)
+
+
+
+### Example 6
+
+
+
+### Example 5
 
 
