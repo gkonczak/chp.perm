@@ -60,14 +60,14 @@ y<-2+0.05*pmax(x-chp,0)+5*rnorm(n)/3
 
 chp.perm(x,y)
 
-### Example 4
+### Example 4 Sample data
 xy=read.csv2('data.csv')
 x=xy$x
 y=xy$y
 
 chp.perm(x,y)
 
-### Example 5
+### Example 5 The same sample data
 xy=read.csv2('http://stat.ue.katowice.pl/data.csv')
 x=xy$x
 y=xy$y
