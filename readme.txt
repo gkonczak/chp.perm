@@ -1,9 +1,14 @@
 
 
-The function chp.perm() for a new, effective offline method for single change point detection in a linear time series regression model, 
-called the residuals permutation-based method. 
-The optimal changepoint in the method maximizes Cohen’s effect size 
-with the parameters estimated by the permutation of residuals in a linear model. 
+Title of the paper:
+ Changepoint detection in linear models using the residuals permutation-based method
+submitted to...
 
+Use of the function:
+ chp.perm(x,y)
+where x, y are numerical vectors with the same number of components.
+
+Results:
+ the position of the changepoint.
 
 

@@ -1,16 +1,18 @@
 
 ### Function chp.perm
-
 chp.perm <-function(x,y,N_perm=100)
 {
 n=length(x)
 first_k=10					
-last_k=90					
-alpha=0.05
+last_k=n-10					
 Cohen_d=rep(NA,n)
+
 simple.fit = lm(y~x)			
 res=simple.fit$residuals		
 yf=simple.fit$fitted			
+
+if (N_perm < 100) stop("Too few permutations")
+if (n < 50) stop("Too few observations")
 
 ### Finding the greatest value of the vecor Cohen_d
 for (k in first_k:last_k)
@@ -35,43 +37,17 @@ return(k_star)
 ### End ot the function
 
 
-
-### Example 1 Minor normal noise
-n=100
-x=1:100
-chp=50
-y<-2+0.05*pmax(x-chp,0)+rnorm(n)/3	
-
-chp.perm(x,y)
-
-### Example 2 Najor normal noise
-n=100
-x=1:100
-chp=50
-y<-2+0.05*pmax(x-chp,0)+rnorm(n)	
-
-chp.perm(x,y)
-
-### Example 3 Dominant normal noise
-n=100
-x=1:100
-chp=50
-y<-2+0.05*pmax(x-chp,0)+5*rnorm(n)/3	
-
-chp.perm(x,y)
-
-### Example 4 Sample data
+### Example Sample data
 xy=read.csv2('data.csv')
 x=xy$x
 y=xy$y
 
 chp.perm(x,y)
 
-### Example 5 The same sample data
+### Example The same sample data
 xy=read.csv2('http://stat.ue.katowice.pl/data.csv')
 x=xy$x
 y=xy$y
 
 chp.perm(x,y)
-
 
