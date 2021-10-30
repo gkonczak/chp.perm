@@ -2,8 +2,8 @@
 
 The use of the function res.perm is only possible under the terms of the license GNU GENERAL PUBLIC LICENSE
 
-When using the procedure res.perm - please cite  the article:
-W. Sommer, K. Stapor, G. Konczak, K. Kotowski, P. Fabian, J. Ochab, A. Bereś, G. Slusarczyk. "Reliable changepoint detection in noisy EEG data using a novel residuals permutation-based method: benchmarking and application to single trial ERPs" 
+When using the procedure res.perm - please cite the article:
+W. Sommer, K. Stapor, G. Konczak, K. Kotowski, P. Fabian, J. Ochab, A. Bereś, G. Slusarczyk. "Changepoint detection in noisy data using a novel residuals permutation-based method (RESPERM): Benchmarking and application" 
 Submitted to Biocybernetics and Biomedical Engineering 
 
 Use of the function:
