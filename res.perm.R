@@ -1,6 +1,6 @@
 
-### Function chp.perm
-chp.perm <-function(x,y,N_perm=100)
+### Function res.perm
+res.perm <- function(x,y,N_perm=100)
 {
 n=length(x)
 first_k=10					
@@ -14,7 +14,7 @@ yf=simple.fit$fitted
 if (N_perm < 100) stop("Too few permutations")
 if (n < 50) stop("Too few observations")
 
-### Finding the greatest value of the vecor Cohen_d
+### Finding the greatest value of the vector Cohen_d
 for (k in first_k:last_k)
 {
 simple1.fit=lm(y[1:k]~x[1:k])
@@ -31,10 +31,11 @@ for (i in 1:N_perm)
 }
 Cohen_d[k]=(b2-b1)/sqrt((n*var(b1s)+n*var(b2s))/(2*n-2))
 }
-k_star=order(Cohen_d[first_k:last_k],decreasing = TRUE)[1]+ first_k-1
-return(k_star)
+d = max(Cohen_d[first_k:last_k], na.rm=T)
+k_star=order(Cohen_d[first_k:last_k],decreasing=T)[1] + first_k-1
+return(list("k_star" = k_star, "chp" = x[k_star], "d" = d))
 }
-### End ot the function
+### End of the function
 
 
 ### Example Sample data
@@ -42,12 +43,12 @@ xy=read.csv2('data.csv')
 x=xy$x
 y=xy$y
 
-chp.perm(x,y)
+res.perm(x,y)
 
 ### Example The same sample data
 xy=read.csv2('http://stat.ue.katowice.pl/data.csv')
 x=xy$x
 y=xy$y
 
-chp.perm(x,y)
+res.perm(x,y)
 
