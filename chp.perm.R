@@ -29,7 +29,7 @@ for (i in 1:N_perm)
 	b1s[i]=lm(ys[1:k]~x[1:k])$coefficients[2]
 	b2s[i]=lm(ys[(k+1):n]~x[(k+1):n])$coefficients[2]
 }
-Cohen_d[k]=(b2-b1)/sqrt((n*var(b1s)+n*var(b2s))/(2*n-2))
+Cohen_d[k]=(b2-b1)/sqrt(((k-1)*var(b1s)+(n-k-1)*var(b2s))/(2*n-2))
 }
 k_star=order(Cohen_d[first_k:last_k],decreasing = TRUE)[1]+ first_k-1
 return(k_star)
