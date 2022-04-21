@@ -1,10 +1,10 @@
 
 
-The use of the function ch.perm is only possible under the terms of the license MIT LICENSE
+The use of the function chp.perm is only possible under the terms of the license MIT LICENSE
 
-When using the procedure chp.perm - please cite  the article:
-W. Sommer, K. Stapor, , G. Konczak, K. Kotowski, P. Fabian, J. Ochab, A. Bereś, G. Ślusarczyk . 
-Changepoint detection in noisy data using a novel residuals permutation-based method (RESPERM): Benchmarking and application.
+When using the procedure - please cite  the article:
+Sommer, W.; Stapor, K.; Kończak, G.; Kotowski, K.; Fabian, P.; Ochab, J.; Bereś, A.; Ślusarczyk, G.
+Changepoint Detection in Noisy Data Using a Novel Residuals Permutation-Based Method (RESPERM): Benchmarking and Application to Single Trial ERPs. Brain Sci. 2022, 12, 525. https://doi.org/10.3390/brainsci12050525
 
 Use of the function:
  chp.perm(x,y)
