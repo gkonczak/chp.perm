@@ -1,6 +1,6 @@
 
 ### Function chp.perm
-chp.perm <-function(x,y,N_perm=100)
+res.perm <-function(x,y,N_perm=100)
 {
 n=length(x)
 first_k=10					
@@ -31,8 +31,9 @@ for (i in 1:N_perm)
 }
 Cohen_d[k]=(b2-b1)/sqrt(((k-1)*var(b1s)+(n-k-1)*var(b2s))/(n-2))
 }
-k_star=order(Cohen_d[first_k:last_k],decreasing = TRUE)[1]+ first_k-1
-return(k_star)
+d = max(Cohen_d[first_k:last_k], na.rm =T)
+k_star = order(Cohen_d[first_k:last_k],decreasing = T)[1] + first_k−1
+return(list("k_star" = k_star, "chp" = x[k_star], "d" = d))
 }
 ### End ot the function
 
@@ -42,7 +43,7 @@ xy=read.csv2('data.csv')
 x=xy$x
 y=xy$y
 
-chp.perm(x,y)
+res.perm(x,y)
 
 ### Example The same sample data
 xy=read.csv2('http://stat.ue.katowice.pl/data.csv')
