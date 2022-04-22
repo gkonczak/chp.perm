@@ -50,5 +50,5 @@ xy=read.csv2('http://stat.ue.katowice.pl/data.csv')
 x=xy$x
 y=xy$y
 
-chp.perm(x,y)
+res.perm(x,y)
 
