@@ -32,7 +32,7 @@ for (i in 1:N_perm)
 Cohen_d[k]=(b2-b1)/sqrt(((k-1)*var(b1s)+(n-k-1)*var(b2s))/(n-2))
 }
 d = max(Cohen_d[first_k:last_k], na.rm =T)
-k_star = order(Cohen_d[first_k:last_k],decreasing = T)[1] + first_k−1
+k_star = order(Cohen_d[first_k:last_k],decreasing = T)[1] + first_k - 1
 return(list("k_star" = k_star, "chp" = x[k_star], "d" = d))
 }
 ### End ot the function
